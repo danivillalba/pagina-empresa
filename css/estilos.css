@@ -1,0 +1,132 @@
+:root{
+    --oscuro:#07070A;
+    --azulOscuro:#0A1128;
+    --azulClaro:#006fe6;
+    --blanco:#FEFCFB;
+    --titulos:'Baloo 2' , cursive;
+    --parrafos:'Montserrat', sans-serif  ;
+
+    font-family: var(--titulos);
+}
+
+html{
+    box-sizing:  border-box ;
+    font-size: 62.5%;
+}
+body{
+    font-size: 1.6rem;
+}
+
+*,*::before, *::after{
+    box-sizing: inherit;
+}
+
+
+/*estilos globales*/
+h1,h2,h3{
+    font-family: var(--titulos);
+}
+
+p,a{
+    font-family: var(--parrafos);
+}
+
+.ocultar{
+    display: none;
+}
+
+@keyframes desplazamiento {
+    /*desplazamiento inicial*/
+
+    0%{
+        transform: translateX(-100%);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+}
+/*encabezado*/
+.encabezado{
+    background-image: url('../img/fondo.jpg');
+    background-repeat: no-repeat;
+    height: 100vh;
+    min-height: 70rem;
+    background-size: cover;
+    background-position: center center;
+
+}
+
+.logo h2{
+    font-size: 3rem;
+}
+.logo h2 span{
+   color: var(--azulClaro);
+}
+
+.contenido-navegacion{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--blanco);
+    box-shadow: 10px 10px 16px -6px rgba(0,0,0,0.45);
+}
+.navegacion{
+        background-color:  var(--blanco);
+        position: absolute;
+        left: 0;
+        top: 70px;
+        width: 100%;
+        animation: desplazamiento .5s ease-in-out;
+}
+
+@media(min-width: 768px) {
+    .ocultar{
+        display: inline;
+    }
+ 
+}
+
+.navegacion a{
+    display: block;
+    font-size: 2rem;
+    padding: 1.1rem;
+    color:var(--oscuro);
+    text-decoration: none ;
+    transition: background-color .3s ease-in-out;
+   
+}
+
+.navegacion a:hover{
+    background-color: var(--azulClaro);
+    color: var(--blanco);
+}
+
+@media(min-width: 768px) {
+    .navegacion a{
+        display: inline;
+    }
+}
+@media(min-width: 768px) {
+    .navegacion{
+        position: relative;
+        top:unset;
+        width: auto;
+        background-color: unset;
+        animation: unset;
+    }
+}  
+.hamburguesa span{
+   width: 5rem;
+   height: 1rem;
+   border: 3px solid white;
+   background-color: var(--oscuro);
+   display: block;
+}
+
+@media(min-width: 768px) {
+    .hamburguesa{
+        display: none;
+    }
+ 
+}
